@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budjet App</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script defer src="../static/js/script.js"></script>
+</head>
+<body>
+    <div class="container flex-column">
+        <div class="top">
+            <div class="budget-box">
+                <h2>Available Budjet in September</h2>
+                <div class="main-balance">
+                    {% for bal in mainBalance %}
+                    <span id="mainbalance">{{ bal["budget"] }}</span>
+                    {% endfor %}
+                </div>
+                <div class="income">
+                    <span class="income-text">INCOME</span>
+                    <div class="income-group">
+                        <span class="income-sign">+</span>
+                        {% for inc in totalIncome %}
+                        <span class="income-amount" id="totalincome">{{ inc["total"]}}</span>
+                        {% endfor %}
+                    </div>
+                 
+                </div>
+                <div class="expenses">
+                    <span class="expenses-text">EXPENSES</span>
+                    <div class="expenses-group">
+                        {% for exp in totalExpense %}
+                        <span class="expenses-amount" id="totalexpense">{{exp["debit"]}}</span>
+                        {% endfor %}
+                        <span class="percentage--expense" id="totalpercentage"></span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="middle">
+            <form action="/submit" method="post">
+                <!--<input type="number" name="" id="" class="middle-type">-->
+                <input type="text" name="desc" id="description" placeholder="Description" class="middle-desc">
+                <input type="text" name="val" id="value" placeholder="Value" class="middle-val">
+                <input type="date" name="date">
+                <input type="submit" class="middle-btn" id="btnOk" value="&LongRightArrow;">
+            </form>
+
+        </div>
+        <div class="bottom">
+            <div class="table1">
+                <table class="income-tbl">
+                    <thead>
+                        <tr>
+                            <th colspan="2">INCOME</th>
+                        </tr>
+                    </thead>
+                    <tbody id="incometblhead">
+                        {% for income in incomes %}
+                        <form action="/delete" method="post">
+                            <tr id="del">
+                                <td>
+                                    <input type="hidden" name="id" value='{{ income["id"] }}'>{{ income["id"] }}
+                                    {{ income["description"] }}
+                                </td>
+                                <td>
+                                    +{{ income["amount"] }}
+                                    <input type="submit" value="&times;" class="btn-round">
+                                </td>
+                            </tr>
+                        </form>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="table2">
+                <table class="expenses-tbl">
+                    <thead>
+                        <tr>
+                            <th colspan="2">EXPENSES</th>
+                        </tr>
+                    </thead>
+                    <tbody id="expensetblhead">
+                        {% for expense in expenses %}
+                        <form action="/delete" method="post">
+                            <tr id="del">
+                                <td>
+                                    <input type="hidden" name="id" value='{{ expense["id"] }}'>{{ expense["id"] }}
+                                </td>
+                                <td>{{ expense["description"] }}</td>
+                                <td>
+                                    {{ expense["amount"]}}
+                                    <input type="submit" value="&times;" class="btn-round">
+                                </td>
+                            </tr>
+                        </form>
+
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

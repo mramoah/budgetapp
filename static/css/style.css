@@ -1,0 +1,333 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body{
+    box-sizing: border-box;
+    font-family: sans-serif;
+    background-color: #fff;
+    min-height: 100vh;
+}
+
+.container{
+    background: #fff;
+    max-width: 85vw;
+    min-height: 80vh;
+    margin: 8rem auto;
+    box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+}
+
+@media only screen and (max-width:900px){
+    .container{
+        max-width: 100%;
+        margin: 0;
+    }  
+}
+.top{
+    background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.5)),url(../images/big.jpg);
+    background-size: cover;
+    background-position: top;
+    height: 50vh;
+}
+
+@media only screen and (max-width:900px){
+    .top{
+        background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.5)),url(../images/normal.jpg);
+    }  
+}
+
+@media only screen and (max-width:500px){
+    .top{
+        background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.5)),url(../images/small.jpg);
+    }  
+}
+.budget-box{
+    font-size: 1.2rem;
+    font-weight: 100;
+    text-transform: uppercase;
+
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 40rem;
+    padding: 2rem 2rem;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media only screen and (max-width:280px){
+    .budget-box{
+        font-size: 1rem;
+        width: 32rem;
+    }
+}
+
+@media only screen and (max-width:375px){
+    .budget-box{
+        margin-top: -4rem;
+    }
+}
+
+.main-balance{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 6rem;
+    font-weight: 100;
+}
+
+@media only screen and (max-width:280px){
+    .main-balance{
+        font-size: 3rem;
+    }
+}
+
+.income{
+    background: #20c49f;
+    color: black;
+    width: 80%;
+    height: 3.5rem;
+    margin-bottom: 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.income-text{
+    margin-left: 1rem;
+}
+.income-group{
+    color: #fff;
+    margin-right: 1rem;
+}
+
+.expenses{
+    background: #f15300;
+    width: 80%;
+    height: 3.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.expenses-text{
+    color: black;
+    margin-left: 1rem;
+}
+.expenses-group{
+    margin-right: 1rem;
+}
+
+.percentage--expense{
+    font-size: 1rem;
+    padding: .2rem .4rem;
+    background: #fc9b67;
+    margin-left: .5rem;
+    margin-right: .2rem;
+    color: #fff;
+}
+
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+
+.middle{
+    background: #efeded;
+    height: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width:450px){
+    .middle{
+        visibility: hidden;
+    }
+}
+
+.middle-type{
+    width: 4rem;
+    height: 3rem;
+    margin-right: 1rem;
+}
+
+.middle-desc{
+    width: 30rem;
+    height: 3rem;
+    margin-right: 1rem;
+}
+
+@media only screen and (max-width:280px){
+    .middle-desc{
+        display: inline-block;
+        width: 1rem;
+    }
+}
+
+@media only screen and (max-width:450px){
+    .middle-desc{
+        margin-top: -12rem;
+        width: 30rem;
+        display: block;
+        visibility: visible;
+        text-align: center;
+    }
+}
+
+.middle-val{
+    width: 6rem;
+    height: 3rem;
+    margin-right: 1rem;
+}
+
+@media only screen and (max-width:450px){
+    .middle-val{
+        display: inline-block;
+        visibility: visible;
+        margin-top: 1rem;
+        text-align: center;
+    }
+}
+
+.middle-btn{
+    cursor: pointer;
+    height: 3rem;
+    width: 3rem;
+    background: transparent;
+    color: #20c49f;
+    border: 1px solid #20c49f;
+    border-radius: 50%;
+    margin-left: 2rem;
+}
+
+@media only screen and (max-width:450px){
+    .middle-btn{
+        display: inline-block;
+        visibility: visible;
+        margin-top: 1rem;
+    }
+}
+
+.bottom{
+    display: flex;
+    justify-content: center;
+}
+
+@media only screen and (max-width:900px){
+    .bottom{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+table{
+    font-size: 1.5rem;
+}
+
+
+
+.income-tbl{
+    width: 30rem;
+    margin-right: 1rem;
+    /* position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50, -50); */
+}
+@media only screen and (max-width:900px){
+    .table1{
+        width: 100%;
+        margin-bottom: 3rem;
+    }
+    .income-tbl{
+        width: 100%;
+    }
+}
+@media only screen and (max-width:450px){
+    .table1{
+        margin-top: -5rem;
+    }
+        
+}
+.income-tbl > thead{
+    color: #20c49f;
+ 
+}
+th{
+    height: 3rem;
+    text-align: left;
+    border-bottom: 1px solid #777;
+}
+
+table > tbody>tr:nth-child(odd){
+    background-color: #efeded;
+}
+
+table > tbody>tr>td{
+    height: 3rem;
+    border-bottom: 1px solid #777;
+}
+
+.income-tbl > tbody >tr>td:nth-child(even){
+    color: #20c49f;
+}
+
+.expenses-tbl{
+    width: 30rem;
+    /* position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50, -50); */
+}
+
+@media only screen and (max-width:900px){
+    .table2{
+        width: 100%;
+        margin-bottom: 3rem;
+    }
+    .expenses-tbl{
+        width: 100%;
+    }
+}
+
+.expenses-tbl > thead{
+    color: #f15300;
+ 
+}
+
+.expenses-tbl > tbody >tr>td:nth-child(even){
+    color: #f15300;
+}
+
+.btn-round{
+    cursor: pointer;
+    height: 1.6rem;
+    width: 1.6rem;
+    background: transparent;
+    color: #ff0000;
+    border: 1px solid #ff0000;
+    border-radius: 50%;
+    margin-left: 2rem;
+}
+
+.visible{
+    visibility: visible;
+}
+
+.invisible{
+    visibility: hidden;
+}
